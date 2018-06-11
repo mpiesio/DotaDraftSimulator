@@ -17,22 +17,23 @@
     </div>
 </div>
 
-<h2 id="all-heroes-header">Heroes</h2>
-<div id="allHeroes">
+
+<div id="all-heroes-div">
+    <h2 id="all-heroes-header">Heroes</h2>
     <div id="str-heroes" class="hero-category-div">
-        <h4 id="str-heroes-header" class="header-main-attribute">Strength<img src="../../Images/Attributes/Strength.png" class="header-main-attribute-img"/></h4>
+        <h4 id="str-heroes-header" class="header-main-attribute">Strength<img src="../../Images/Attributes/Strength.png" class="header-main-attribute-img" /></h4>
         @{
             foreach (var hero in Model.Where(x => x.Attribute == Hero.MainAttribute.Strength))
             {
                 var imgsrc = "../Images/Heroes/" + @hero.Name + ".png";
-                <img src="@imgsrc" class="hero-img" title="@hero.Name" 
-                     data-main-attribute=@hero.Attribute data-attack-type=@hero.Attack data-carry="@hero.CarryFactor" 
+                <img src="@imgsrc" class="hero-img" title="@hero.Name"
+                     data-main-attribute=@hero.Attribute data-attack-type=@hero.Attack data-carry="@hero.CarryFactor"
                      data-mid=@hero.MidlaneFactor data-offlane=@hero.OfflaneFactor data-support=@hero.SupportFactor>
             }
         }
     </div>
     <div id="agi-heroes" class="hero-category-div">
-        <h4 id="agi-heroes-header" class="header-main-attribute">Agility<img src="../../Images/Attributes/Agility.png" class="header-main-attribute-img"/></h4>
+        <h4 id="agi-heroes-header" class="header-main-attribute">Agility<img src="../../Images/Attributes/Agility.png" class="header-main-attribute-img" /></h4>
         @{
             foreach (var hero in Model.Where(x => x.Attribute == Hero.MainAttribute.Agility))
             {
@@ -44,7 +45,7 @@
         }
     </div>
     <div id="int-heroes" class="hero-category-div">
-        <h4 id="int-heroes-header" class="header-main-attribute">Intelligence<img src="../../Images/Attributes/Intelligence.png" class="header-main-attribute-img"/></h4>
+        <h4 id="int-heroes-header" class="header-main-attribute">Intelligence<img src="../../Images/Attributes/Intelligence.png" class="header-main-attribute-img" /></h4>
         @{
             foreach (var hero in Model.Where(x => x.Attribute == Hero.MainAttribute.Intelligence))
             {
@@ -55,7 +56,7 @@
             }
         }
     </div>
-    
-    
+
+
 
 </div>

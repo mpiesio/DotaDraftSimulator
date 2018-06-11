@@ -1,6 +1,13 @@
 ﻿body {
 }
 
+#all-heroes-div {
+    margin: 10px;
+    width: 95%;
+    height: 95%;
+
+}
+
 .header-main-attribute-img {
     margin: 0 8px;
     width: 30px;
@@ -10,7 +17,7 @@
 }
 
 .header-main-attribute {
-    margin: 10px;
+    margin: 10px 4px;
     vertical-align: middle;
 }
 
@@ -33,13 +40,13 @@
 .hero-img {
     width: 90px;
     height: 51px;
-    margin: 0 3px;
+    margin: 4px 2px;
 }
 
 #selectedHero {
     float: right;
     width: 350px;
-    height: 515px;
+    height: 500px;
     background: #333333;
     border: solid #AA0000 5px;
     color: #AAAAAA;
@@ -58,7 +65,7 @@
 
 #selectedHeroName {
     text-align: center;
-    font-size: 30pt;
+    font-size: 27pt;
 }
 
 #main-attribute-img, #attack-type-img {
