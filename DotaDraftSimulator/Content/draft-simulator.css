@@ -1,0 +1,14 @@
+﻿body {
+}
+
+#str-heroes-header {
+    color: #FF2222;
+}
+
+#agi-heroes-header {
+    color: green;
+}
+
+#int-heroes-header {
+    color: #2222FF;
+}
