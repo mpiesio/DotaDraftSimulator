@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using DotaDraftSimulator.Models;
 
 namespace DotaDraftSimulator.Controllers
 {
@@ -10,7 +11,12 @@ namespace DotaDraftSimulator.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            List<Hero> heroList;
+            using (var ctx = new HeroDb())
+            {
+                heroList = ctx.Heroes.ToList();
+            }
+            return View(heroList);
         }
     }
 }

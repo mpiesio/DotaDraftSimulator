@@ -1,6 +1,7 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    font-family: serif;
     background: url("../Images/background.jpg")
 }
 
@@ -24,8 +25,10 @@ textarea {
     max-width: 280px;
 }
 
-footer > p {
+footer {
     font-size: smaller;
+    position: absolute;
+    bottom: 15px;
 }
 
 

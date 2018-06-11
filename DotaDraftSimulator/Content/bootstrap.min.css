@@ -39,7 +39,7 @@
     --breakpoint-md: 768px;
     --breakpoint-lg: 992px;
     --breakpoint-xl: 1200px;
-    --font-family-sans-serif: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --font-family-serif: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, serif;
     --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace
 }
 
@@ -49,7 +49,7 @@
 }
 
 html {
-    font-family: sans-serif;
+    font-family: serif;
     line-height: 1.15;
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
@@ -67,7 +67,7 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 
 body {
     margin: 0;
-    font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, serif;
     font-size: 0.875rem;
     font-weight: 400;
     line-height: 1.5;
@@ -108,7 +108,7 @@ abbr[title], abbr[data-original-title] {
 address {
     margin-bottom: 1rem;
     font-style: normal;
-    line-height: inherit
+    line-height: serif
 }
 
 ol, ul, dl {
@@ -173,12 +173,12 @@ a {
     }
 
     a:not([href]):not([tabindex]) {
-        color: inherit;
+        color: serif;
         text-decoration: none
     }
 
         a:not([href]):not([tabindex]):hover, a:not([href]):not([tabindex]):focus {
-            color: inherit;
+            color: serif;
             text-decoration: none
         }
 
@@ -224,7 +224,7 @@ caption {
 }
 
 th {
-    text-align: inherit
+    text-align: serif
 }
 
 label {
@@ -243,9 +243,9 @@ button {
 
 input, button, select, optgroup, textarea {
     margin: 0;
-    font-family: inherit;
-    font-size: inherit;
-    line-height: inherit
+    font-family: serif;
+    font-size: serif;
+    line-height: serif
 }
 
 button, input {
@@ -294,8 +294,8 @@ legend {
     padding: 0;
     margin-bottom: .5rem;
     font-size: 1.5rem;
-    line-height: inherit;
-    color: inherit;
+    line-height: serif;
+    color: serif;
     white-space: normal
 }
 
@@ -317,7 +317,7 @@ progress {
     }
 
 ::-webkit-file-upload-button {
-    font: inherit;
+    font: serif;
     -webkit-appearance: button
 }
 
@@ -340,7 +340,7 @@ template {
 
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     margin-bottom: 0.5rem;
-    font-family: inherit;
+    font-family: serif;
     font-weight: 500;
     line-height: 1.2;
     color: #fff
@@ -489,7 +489,7 @@ code {
 }
 
 a > code {
-    color: inherit
+    color: serif
 }
 
 kbd {
@@ -509,12 +509,12 @@ kbd {
 pre {
     display: block;
     font-size: 87.5%;
-    color: inherit
+    color: serif
 }
 
     pre code {
-        font-size: inherit;
-        color: inherit;
+        font-size: serif;
+        color: serif;
         word-break: normal
     }
 
@@ -2134,7 +2134,7 @@ select.form-control:focus::-ms-value {
     padding-top: calc(0.375rem + 1px);
     padding-bottom: calc(0.375rem + 1px);
     margin-bottom: 0;
-    font-size: inherit;
+    font-size: serif;
     line-height: 1.5
 }
 
@@ -2329,7 +2329,7 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
 }
 
     .was-validated .custom-file-input:valid ~ .custom-file-label::before, .custom-file-input.is-valid ~ .custom-file-label::before {
-        border-color: inherit
+        border-color: serif
     }
 
 .was-validated .custom-file-input:valid ~ .valid-feedback, .was-validated .custom-file-input:valid ~ .valid-tooltip, .custom-file-input.is-valid ~ .valid-feedback, .custom-file-input.is-valid ~ .valid-tooltip {
@@ -2416,7 +2416,7 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
 }
 
     .was-validated .custom-file-input:invalid ~ .custom-file-label::before, .custom-file-input.is-invalid ~ .custom-file-label::before {
-        border-color: inherit
+        border-color: serif
     }
 
 .was-validated .custom-file-input:invalid ~ .invalid-feedback, .was-validated .custom-file-input:invalid ~ .invalid-tooltip, .custom-file-input.is-invalid ~ .invalid-feedback, .custom-file-input.is-invalid ~ .invalid-tooltip {
@@ -3369,7 +3369,7 @@ input[type="submit"].btn-block, input[type="reset"].btn-block, input[type="butto
     clear: both;
     font-weight: 400;
     color: #fff;
-    text-align: inherit;
+    text-align: serif;
     white-space: nowrap;
     background-color: transparent;
     border: 0
@@ -4135,7 +4135,7 @@ input[type="submit"].btn-block, input[type="reset"].btn-block, input[type="butto
     padding-bottom: 0.3359375rem;
     margin-right: 1rem;
     font-size: 1.09375rem;
-    line-height: inherit;
+    line-height: serif;
     white-space: nowrap
 }
 
@@ -5119,7 +5119,7 @@ input[type="submit"].btn-block, input[type="reset"].btn-block, input[type="butto
 }
 
 .alert-heading {
-    color: inherit
+    color: serif
 }
 
 .alert-link {
@@ -5135,7 +5135,7 @@ input[type="submit"].btn-block, input[type="reset"].btn-block, input[type="butto
         top: 0;
         right: 0;
         padding: 0.75rem 1.25rem;
-        color: inherit
+        color: serif
     }
 
 .alert-primary {
@@ -5347,7 +5347,7 @@ input[type="submit"].btn-block, input[type="reset"].btn-block, input[type="butto
 .list-group-item-action {
     width: 100%;
     color: #282828;
-    text-align: inherit
+    text-align: serif
 }
 
     .list-group-item-action:hover, .list-group-item-action:focus {
@@ -5752,7 +5752,7 @@ button.close {
     z-index: 1070;
     display: block;
     margin: 0;
-    font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, serif;
     font-style: normal;
     font-weight: 400;
     line-height: 1.5;
@@ -5865,7 +5865,7 @@ button.close {
     z-index: 1060;
     display: block;
     max-width: 276px;
-    font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, serif;
     font-style: normal;
     font-weight: 400;
     line-height: 1.5;
@@ -9508,7 +9508,7 @@ a.text-dark:hover, a.text-dark:focus {
     }
 
     .table-dark {
-        color: inherit
+        color: serif
     }
 
         .table-dark th, .table-dark td, .table-dark thead th, .table-dark tbody + tbody {
@@ -9516,7 +9516,7 @@ a.text-dark:hover, a.text-dark:focus {
         }
 
     .table .thead-dark th {
-        color: inherit;
+        color: serif;
         border-color: #282828
     }
 }
@@ -9691,7 +9691,7 @@ legend, .input-group-addon, .input-group-text, .custom-file-label::after {
 }
 
 .card h1, .card h2, .card h3, .card h4, .card h5, .card h6, .list-group-item h1, .list-group-item h2, .list-group-item h3, .list-group-item h4, .list-group-item h5, .list-group-item h6 {
-    color: inherit
+    color: serif
 }
 
 .popover-title {

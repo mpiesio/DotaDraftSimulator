@@ -1,14 +1,82 @@
 ﻿body {
 }
 
+.header-main-attribute-img {
+    margin: 0 8px;
+    width: 30px;
+    height: 30px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.header-main-attribute {
+    margin: 10px;
+    vertical-align: middle;
+}
+
 #str-heroes-header {
-    color: #FF2222;
+    color: #EC3D06;
 }
 
 #agi-heroes-header {
-    color: green;
+    color: #26E030;
 }
 
 #int-heroes-header {
-    color: #2222FF;
+    color: #00D9EC;
+}
+
+.hero-category-div {
+    width: 80%;
+}
+
+.hero-img {
+    width: 90px;
+    height: 51px;
+    margin: 0 3px;
+}
+
+#selectedHero {
+    float: right;
+    width: 350px;
+    height: 515px;
+    background: #333333;
+    border: solid #AA0000 5px;
+    color: #AAAAAA;
+    font-size: x-large;
+    border-radius: 5px;
+    padding: 10px 15px;
+}
+
+#selectedHeroImg {
+    margin: 10px 0 15px 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    border-radius: 10px;
+}
+
+#selectedHeroName {
+    text-align: center;
+    font-size: 30pt;
+}
+
+#main-attribute-img, #attack-type-img {
+    width: 30px;
+    height: 30px;
+    margin: 5px 5px;
+    vertical-align: middle;
+}
+
+#stats-div div span{
+    vertical-align: middle;
+    width: 145px;
+    display: inline-block;
+}
+
+.star-img {
+    height: 30px;
+    height: 30px;
+    margin: 5px 5px;
+    vertical-align: middle;
 }

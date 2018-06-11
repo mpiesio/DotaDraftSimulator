@@ -177,13 +177,33 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\Attack\Melee.png" />
+    <Content Include="Images\Attack\Ranged.png" />
+    <Content Include="Images\Attributes\Agility.png" />
+    <Content Include="Images\Attributes\Intelligence.png" />
+    <Content Include="Images\Attributes\Strength.png" />
     <Content Include="Images\background.jpg" />
+    <Content Include="Images\Heroes\Abaddon.png" />
+    <Content Include="Images\Heroes\Bloodseeker.png" />
+    <Content Include="Images\Heroes\Brewmaster.png" />
+    <Content Include="Images\Heroes\Crystal Maiden.png" />
+    <Content Include="Images\Heroes\Dark Seer.png" />
+    <Content Include="Images\Heroes\Drow Ranger.png" />
+    <Content Include="Images\Heroes\Io.png" />
+    <Content Include="Images\Heroes\Morphling.png" />
+    <Content Include="Images\Heroes\Winter Wyvern.png" />
+    <Content Include="Images\Stars\Star1.png" />
+    <Content Include="Images\Stars\Star2.png" />
+    <Content Include="Images\Stars\Star3.png" />
+    <Content Include="Images\Stars\Star4.png" />
+    <Content Include="Images\Stars\Star5.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\hero.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.js" />

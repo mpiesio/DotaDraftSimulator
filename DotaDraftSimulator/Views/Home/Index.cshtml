@@ -1,15 +1,61 @@
-﻿<link rel="stylesheet" href="~/Content/draft-simulator.css"/>
+﻿@using DotaDraftSimulator.Models
+@model IEnumerable<DotaDraftSimulator.Models.Hero>
+
+<link rel="stylesheet" href="~/Content/draft-simulator.css" />
+<script type="text/javascript" src="~/Scripts/hero.js"></script>
+
+<div id="selectedHero" hidden>
+    <p id="selectedHeroName"></p>
+    <img id="selectedHeroImg"/>
+    <div id="stats-div">
+        <div><span>Main attribute:</span><img id="main-attribute-img" /></div>
+        <div><span>Attack type:</span><img id="attack-type-img" /></div>
+        <div><span>Carry:</span><img id="carry-img" class="star-img" /></div>
+        <div><span>Mid:</span><img id="mid-img" class="star-img" /></div>
+        <div><span>Offlane:</span><img id="offlane-img" class="star-img" /></div>
+        <div><span>Support:</span><img id="support-img" class="star-img" /></div>
+    </div>
+</div>
 
 <h2 id="all-heroes-header">Heroes</h2>
 <div id="allHeroes">
-    <h4 id="str-heroes-header">Strength</h4>
-    <div id="str-heroes" class="hero-div">
+    <div id="str-heroes" class="hero-category-div">
+        <h4 id="str-heroes-header" class="header-main-attribute">Strength<img src="../../Images/Attributes/Strength.png" class="header-main-attribute-img"/></h4>
+        @{
+            foreach (var hero in Model.Where(x => x.Attribute == Hero.MainAttribute.Strength))
+            {
+                var imgsrc = "../Images/Heroes/" + @hero.Name + ".png";
+                <img src="@imgsrc" class="hero-img" title="@hero.Name" 
+                     data-main-attribute=@hero.Attribute data-attack-type=@hero.Attack data-carry="@hero.CarryFactor" 
+                     data-mid=@hero.MidlaneFactor data-offlane=@hero.OfflaneFactor data-support=@hero.SupportFactor>
+            }
+        }
     </div>
-    <h4 id="agi-heroes-header">Agility</h4>
-    <div id="agi-heroes" class="hero-div">
+    <div id="agi-heroes" class="hero-category-div">
+        <h4 id="agi-heroes-header" class="header-main-attribute">Agility<img src="../../Images/Attributes/Agility.png" class="header-main-attribute-img"/></h4>
+        @{
+            foreach (var hero in Model.Where(x => x.Attribute == Hero.MainAttribute.Agility))
+            {
+                var imgsrc = "../Images/Heroes/" + @hero.Name + ".png";
+                <img src="@imgsrc" class="hero-img" title="@hero.Name"
+                     data-main-attribute=@hero.Attribute data-attack-type=@hero.Attack data-carry="@hero.CarryFactor"
+                     data-mid=@hero.MidlaneFactor data-offlane=@hero.OfflaneFactor data-support=@hero.SupportFactor>
+            }
+        }
     </div>
-    <h4 id="int-heroes-header">Intelligence</h4>
-    <div id="int-heroes" class="hero-div">
+    <div id="int-heroes" class="hero-category-div">
+        <h4 id="int-heroes-header" class="header-main-attribute">Intelligence<img src="../../Images/Attributes/Intelligence.png" class="header-main-attribute-img"/></h4>
+        @{
+            foreach (var hero in Model.Where(x => x.Attribute == Hero.MainAttribute.Intelligence))
+            {
+                var imgsrc = "../Images/Heroes/" + @hero.Name + ".png";
+                <img src="@imgsrc" class="hero-img" title="@hero.Name"
+                     data-main-attribute=@hero.Attribute data-attack-type=@hero.Attack data-carry="@hero.CarryFactor"
+                     data-mid=@hero.MidlaneFactor data-offlane=@hero.OfflaneFactor data-support=@hero.SupportFactor>
+            }
+        }
     </div>
+    
+    
 
 </div>
