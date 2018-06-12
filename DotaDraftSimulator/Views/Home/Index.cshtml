@@ -1,8 +1,10 @@
 ﻿@using DotaDraftSimulator.Models
 @model IEnumerable<DotaDraftSimulator.Models.Hero>
 
-<link rel="stylesheet" href="~/Content/draft-simulator.css" />
-<script type="text/javascript" src="~/Scripts/hero.js"></script>
+@section scripts{
+    <link rel="stylesheet" href="~/Content/draft-simulator.css"/>
+    <script type="text/javascript" src="~/Scripts/hero.js"></script>
+}
 
 <div id="selectedHero" hidden>
     <p id="selectedHeroName"></p>

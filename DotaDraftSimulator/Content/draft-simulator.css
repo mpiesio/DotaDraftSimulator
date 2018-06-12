@@ -3,9 +3,11 @@
 
 #all-heroes-div {
     margin: 10px;
-    width: 95%;
+    width: 80%;
     height: 95%;
-
+    position: absolute;
+    top: 30px;
+    left: 30px;
 }
 
 .header-main-attribute-img {
@@ -34,7 +36,7 @@
 }
 
 .hero-category-div {
-    width: 80%;
+    width: 90%;
 }
 
 .hero-img {
@@ -44,7 +46,7 @@
 }
 
 #selectedHero {
-    float: right;
+    margin-left: 85%;
     width: 350px;
     height: 500px;
     background: #333333;
@@ -75,7 +77,7 @@
     vertical-align: middle;
 }
 
-#stats-div div span{
+#stats-div div span {
     vertical-align: middle;
     width: 145px;
     display: inline-block;
