@@ -2,8 +2,8 @@
     $("#filters input[type='checkbox']").checkboxradio({ icon: false });
     var heroImagesAll = $('#all-heroes-div .hero-img');
     var name = "";
-    var interval;
-    var launchFilter;
+    var nameTimeout;
+    var launchFilterTimeout;
     
 
     var filterFunc = function () {
@@ -71,17 +71,15 @@
             if (name.length > 0) {
                 name = name.substr(0, name.length - 1);
                 $('#typed-hero-name').text(name).fadeTo(500, 0.7);
-                clearInterval(interval);
-                interval = setInterval(function () {
+                clearTimeout(nameTimeout);
+                nameTimeout = setTimeout(function () {
                     console.log("Fade");
                     $('#typed-hero-name').fadeTo(500, 0);
-                    clearInterval(interval);
                 },1000);
-                clearInterval(launchFilter);
-                launchFilter = setInterval(function () {
+                clearTimeout(launchFilterTimeout);
+                launchFilterTimeout = setTimeout(function () {
                     console.log("Launching");
                     filterFunc();
-                    clearInterval(launchFilter);
                 }, 400);
             }
         }
@@ -91,17 +89,15 @@
         name += String.fromCharCode(e.which);
         name = name.charAt(0).toUpperCase() + name.slice(1);
         $('#typed-hero-name').text(name).fadeTo(500, 0.7);
-        clearInterval(interval);
-        interval = setInterval(function () {
+        clearTimeout(nameTimeout);
+        nameTimeout = setTimeout(function () {
             console.log("Fade");
             $('#typed-hero-name').fadeTo(500, 0);
-            clearInterval(interval);
         }, 1000);
-        clearInterval(launchFilter);
-        launchFilter = setInterval(function () {
+        clearTimeout(launchFilterTimeout);
+        launchFilterTimeout = setTimeout(function () {
             console.log("Launching");
             filterFunc();
-            clearInterval(launchFilter);
         }, 400);
     });
 
