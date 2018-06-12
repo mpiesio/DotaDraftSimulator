@@ -61,7 +61,7 @@ works properly when clicked or hovered */
 html .ui-button.ui-state-disabled:hover,
 html .ui-button.ui-state-disabled:active {
 	border: 1px solid #d8dcdf;
-	background: #999999 url("images/ui-bg_highlight-hard_100_eeeeee_1x100.png") 50% 50% repeat-x;
+    background: #999999; 
 	font-weight: bold;
 	color: #004276;
 }
@@ -84,7 +84,7 @@ a:visited.ui-button,
 .ui-button:hover,
 .ui-button:focus {
 	border: 1px solid #cdd5da;
-	background: #999999 url("images/ui-bg_highlight-hard_100_f6f6f6_1x100.png") 50% 50% repeat-x;
+    background: #999999;
 	font-weight: bold;
 	color: #111111;
 }
@@ -112,7 +112,7 @@ a.ui-button:active,
 .ui-button:active,
 .ui-button.ui-state-active:hover {
 	border: 1px solid #999999;
-	background: #cccccc;
+	background: #FFFFFF;
 	font-weight: bold;
 	color: #cc0000;
 }

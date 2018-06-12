@@ -24,50 +24,82 @@
         <h5>Filters</h5>
         <div id="attack-type-checkbox-div">
             <span>Attack type: </span>
-            <input type="checkbox" id="melee-checkbox" name="attack"/> <label for="melee-checkbox">Melee</label>
-            <input type="checkbox" id="ranged-checkbox" name="attack"/> <label for="ranged-checkbox">Ranged</label>
+            <input type="checkbox" id="melee-checkbox" name="Melee" /> <label for="melee-checkbox">Melee</label>
+            <input type="checkbox" id="ranged-checkbox" name="Ranged" /> <label for="ranged-checkbox">Ranged</label>
+        </div>
+        <div id="carry-checkbox-div" class="position-factor-div">
+            <span>Carry: </span>
+            <input type="checkbox" id="carry-1" name="carry" /> <label for="carry-1">1</label>
+            <input type="checkbox" id="carry-2" name="carry" /> <label for="carry-2">2</label>
+            <input type="checkbox" id="carry-3" name="carry" /> <label for="carry-3">3</label>
+            <input type="checkbox" id="carry-4" name="carry" /> <label for="carry-4">4</label>
+            <input type="checkbox" id="carry-5" name="carry" /> <label for="carry-5">5</label>
+        </div>
+        <div id="mid-checkbox-div" class="position-factor-div">
+            <span>Mid: </span>
+            <input type="checkbox" id="mid-1" name="mid" /> <label for="mid-1">1</label>
+            <input type="checkbox" id="mid-2" name="mid" /> <label for="mid-2">2</label>
+            <input type="checkbox" id="mid-3" name="mid" /> <label for="mid-3">3</label>
+            <input type="checkbox" id="mid-4" name="mid" /> <label for="mid-4">4</label>
+            <input type="checkbox" id="mid-5" name="mid" /> <label for="mid-5">5</label>
+        </div>
+        <div id="offlane-checkbox-div" class="position-factor-div">
+            <span>Offlane: </span>
+            <input type="checkbox" id="offlane-1" name="offlane" /> <label for="offlane-1">1</label>
+            <input type="checkbox" id="offlane-2" name="offlane" /> <label for="offlane-2">2</label>
+            <input type="checkbox" id="offlane-3" name="offlane" /> <label for="offlane-3">3</label>
+            <input type="checkbox" id="offlane-4" name="offlane" /> <label for="offlane-4">4</label>
+            <input type="checkbox" id="offlane-5" name="offlane" /> <label for="offlane-5">5</label>
+        </div>
+        <div id="support-checkbox-div" class="position-factor-div">
+            <span>Support: </span>
+            <input type="checkbox" id="support-1" name="support" /> <label for="support-1">1</label>
+            <input type="checkbox" id="support-2" name="support" /> <label for="support-2">2</label>
+            <input type="checkbox" id="support-3" name="support" /> <label for="support-3">3</label>
+            <input type="checkbox" id="support-4" name="support" /> <label for="support-4">4</label>
+            <input type="checkbox" id="support-5" name="support" /> <label for="support-5">5</label>
         </div>
     </div>
 </div>
 
 
 
-    <div id="all-heroes-div">
-        <h2 id="all-heroes-header">Heroes</h2>
-        <div id="str-heroes" class="hero-category-div">
-            <h4 id="str-heroes-header" class="header-main-attribute">Strength<img src="../../Images/Attributes/Strength.png" class="header-main-attribute-img" /></h4>
-            @{
-                foreach (var hero in Model.Where(x => x.Attribute == Hero.MainAttribute.Strength))
-                {
-                    var imgsrc = "../Images/Heroes/" + @hero.Name + ".png";
-                    <img src="@imgsrc" class="hero-img" title="@hero.Name"
-                         data-main-attribute=@hero.Attribute data-attack-type=@hero.Attack data-carry="@hero.CarryFactor"
-                         data-mid=@hero.MidlaneFactor data-offlane=@hero.OfflaneFactor data-support=@hero.SupportFactor>
-                }
+<div id="all-heroes-div">
+    <h2 id="all-heroes-header">Heroes</h2>
+    <div id="str-heroes" class="hero-category-div">
+        <h4 id="str-heroes-header" class="header-main-attribute">Strength<img src="../../Images/Attributes/Strength.png" class="header-main-attribute-img" /></h4>
+        @{
+            foreach (var hero in Model.Where(x => x.Attribute == Hero.MainAttribute.Strength))
+            {
+                var imgsrc = "../Images/Heroes/" + @hero.Name + ".png";
+                <img src="@imgsrc" class="hero-img" title="@hero.Name"
+                     data-main-attribute=@hero.Attribute data-attack-type=@hero.Attack data-carry="@hero.CarryFactor"
+                     data-mid=@hero.MidlaneFactor data-offlane=@hero.OfflaneFactor data-support=@hero.SupportFactor>
             }
-        </div>
-        <div id="agi-heroes" class="hero-category-div">
-            <h4 id="agi-heroes-header" class="header-main-attribute">Agility<img src="../../Images/Attributes/Agility.png" class="header-main-attribute-img" /></h4>
-            @{
-                foreach (var hero in Model.Where(x => x.Attribute == Hero.MainAttribute.Agility))
-                {
-                    var imgsrc = "../Images/Heroes/" + @hero.Name + ".png";
-                    <img src="@imgsrc" class="hero-img" title="@hero.Name"
-                         data-main-attribute=@hero.Attribute data-attack-type=@hero.Attack data-carry="@hero.CarryFactor"
-                         data-mid=@hero.MidlaneFactor data-offlane=@hero.OfflaneFactor data-support=@hero.SupportFactor>
-                }
-            }
-        </div>
-        <div id="int-heroes" class="hero-category-div">
-            <h4 id="int-heroes-header" class="header-main-attribute">Intelligence<img src="../../Images/Attributes/Intelligence.png" class="header-main-attribute-img" /></h4>
-            @{
-                foreach (var hero in Model.Where(x => x.Attribute == Hero.MainAttribute.Intelligence))
-                {
-                    var imgsrc = "../Images/Heroes/" + @hero.Name + ".png";
-                    <img src="@imgsrc" class="hero-img" title="@hero.Name"
-                         data-main-attribute=@hero.Attribute data-attack-type=@hero.Attack data-carry="@hero.CarryFactor"
-                         data-mid=@hero.MidlaneFactor data-offlane=@hero.OfflaneFactor data-support=@hero.SupportFactor>
-                }
-            }
-        </div>
+        }
     </div>
+    <div id="agi-heroes" class="hero-category-div">
+        <h4 id="agi-heroes-header" class="header-main-attribute">Agility<img src="../../Images/Attributes/Agility.png" class="header-main-attribute-img" /></h4>
+        @{
+            foreach (var hero in Model.Where(x => x.Attribute == Hero.MainAttribute.Agility))
+            {
+                var imgsrc = "../Images/Heroes/" + @hero.Name + ".png";
+                <img src="@imgsrc" class="hero-img" title="@hero.Name"
+                     data-main-attribute=@hero.Attribute data-attack-type=@hero.Attack data-carry="@hero.CarryFactor"
+                     data-mid=@hero.MidlaneFactor data-offlane=@hero.OfflaneFactor data-support=@hero.SupportFactor>
+            }
+        }
+    </div>
+    <div id="int-heroes" class="hero-category-div">
+        <h4 id="int-heroes-header" class="header-main-attribute">Intelligence<img src="../../Images/Attributes/Intelligence.png" class="header-main-attribute-img" /></h4>
+        @{
+            foreach (var hero in Model.Where(x => x.Attribute == Hero.MainAttribute.Intelligence))
+            {
+                var imgsrc = "../Images/Heroes/" + @hero.Name + ".png";
+                <img src="@imgsrc" class="hero-img" title="@hero.Name"
+                     data-main-attribute=@hero.Attribute data-attack-type=@hero.Attack data-carry="@hero.CarryFactor"
+                     data-mid=@hero.MidlaneFactor data-offlane=@hero.OfflaneFactor data-support=@hero.SupportFactor>
+            }
+        }
+    </div>
+</div>
