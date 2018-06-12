@@ -47,6 +47,7 @@
 
 #tools-column {
     margin-left: 85%;
+    width: 500px;
 }
 
 #selectedHero {
@@ -58,6 +59,7 @@
     font-size: x-large;
     border-radius: 5px;
     padding: 10px 15px;
+    visibility: hidden;
 }
 
 #selectedHeroImg {
@@ -96,4 +98,39 @@
 .hero-hover {
     border: solid #AA0000 3px;
     border-radius: 3px;
+}
+
+#attack-type-checkbox-div  {
+    margin-left: 5px;
+    vertical-align: middle;
+}
+
+#attack-type-checkbox-div span{
+    font-size: 15pt;
+}
+
+#attack-type-checkbox-div label {
+    width: 90px;
+}
+
+#filters {
+    width: 350px;
+    height: 400px;
+    background: #333333;
+    border: solid #AA0000 5px;
+    color: #AAAAAA;
+    border-radius: 5px;
+    padding: 10px 10px;
+    margin-top: 15px;
+}
+
+.filtered-out {
+    opacity: 0.2;
+    filter: alpha(opacity=20);
+}
+
+#filters h5 {
+    text-align: center;
+    color: #AAAAAA;
+    font-size: 27pt;
 }

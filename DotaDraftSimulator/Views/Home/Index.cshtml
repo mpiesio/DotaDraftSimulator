@@ -2,14 +2,15 @@
 @model IEnumerable<DotaDraftSimulator.Models.Hero>
 
 @section scripts{
-    <link rel="stylesheet" href="~/Content/draft-simulator.css"/>
+    <link rel="stylesheet" href="~/Content/draft-simulator.css" />
     <script type="text/javascript" src="~/Scripts/hero.js"></script>
+    <script type="text/javascript" src="~/Scripts/filters.js"></script>
 }
 
 <div id="tools-column">
-    <div id="selectedHero" hidden>
+    <div id="selectedHero">
         <p id="selectedHeroName"></p>
-        <img id="selectedHeroImg"/>
+        <img id="selectedHeroImg" />
         <div id="stats-div">
             <div><span>Main attribute:</span><img id="main-attribute-img" /></div>
             <div><span>Attack type:</span><img id="attack-type-img" /></div>
@@ -20,49 +21,53 @@
         </div>
     </div>
     <div id="filters">
-        <label>Melee <input type="checkbox" id="melee-checkbox" /></label>
-        <label>Ranged <input type="checkbox" value="ranged-checkbox" /></label>
+        <h5>Filters</h5>
+        <div id="attack-type-checkbox-div">
+            <span>Attack type: </span>
+            <input type="checkbox" id="melee-checkbox" name="attack"/> <label for="melee-checkbox">Melee</label>
+            <input type="checkbox" id="ranged-checkbox" name="attack"/> <label for="ranged-checkbox">Ranged</label>
+        </div>
     </div>
 </div>
 
 
 
-<div id="all-heroes-div">
-    <h2 id="all-heroes-header">Heroes</h2>
-    <div id="str-heroes" class="hero-category-div">
-        <h4 id="str-heroes-header" class="header-main-attribute">Strength<img src="../../Images/Attributes/Strength.png" class="header-main-attribute-img" /></h4>
-        @{
-            foreach (var hero in Model.Where(x => x.Attribute == Hero.MainAttribute.Strength))
-            {
-                var imgsrc = "../Images/Heroes/" + @hero.Name + ".png";
-                <img src="@imgsrc" class="hero-img" title="@hero.Name"
-                     data-main-attribute=@hero.Attribute data-attack-type=@hero.Attack data-carry="@hero.CarryFactor"
-                     data-mid=@hero.MidlaneFactor data-offlane=@hero.OfflaneFactor data-support=@hero.SupportFactor>
+    <div id="all-heroes-div">
+        <h2 id="all-heroes-header">Heroes</h2>
+        <div id="str-heroes" class="hero-category-div">
+            <h4 id="str-heroes-header" class="header-main-attribute">Strength<img src="../../Images/Attributes/Strength.png" class="header-main-attribute-img" /></h4>
+            @{
+                foreach (var hero in Model.Where(x => x.Attribute == Hero.MainAttribute.Strength))
+                {
+                    var imgsrc = "../Images/Heroes/" + @hero.Name + ".png";
+                    <img src="@imgsrc" class="hero-img" title="@hero.Name"
+                         data-main-attribute=@hero.Attribute data-attack-type=@hero.Attack data-carry="@hero.CarryFactor"
+                         data-mid=@hero.MidlaneFactor data-offlane=@hero.OfflaneFactor data-support=@hero.SupportFactor>
+                }
             }
-        }
-    </div>
-    <div id="agi-heroes" class="hero-category-div">
-        <h4 id="agi-heroes-header" class="header-main-attribute">Agility<img src="../../Images/Attributes/Agility.png" class="header-main-attribute-img" /></h4>
-        @{
-            foreach (var hero in Model.Where(x => x.Attribute == Hero.MainAttribute.Agility))
-            {
-                var imgsrc = "../Images/Heroes/" + @hero.Name + ".png";
-                <img src="@imgsrc" class="hero-img" title="@hero.Name"
-                     data-main-attribute=@hero.Attribute data-attack-type=@hero.Attack data-carry="@hero.CarryFactor"
-                     data-mid=@hero.MidlaneFactor data-offlane=@hero.OfflaneFactor data-support=@hero.SupportFactor>
+        </div>
+        <div id="agi-heroes" class="hero-category-div">
+            <h4 id="agi-heroes-header" class="header-main-attribute">Agility<img src="../../Images/Attributes/Agility.png" class="header-main-attribute-img" /></h4>
+            @{
+                foreach (var hero in Model.Where(x => x.Attribute == Hero.MainAttribute.Agility))
+                {
+                    var imgsrc = "../Images/Heroes/" + @hero.Name + ".png";
+                    <img src="@imgsrc" class="hero-img" title="@hero.Name"
+                         data-main-attribute=@hero.Attribute data-attack-type=@hero.Attack data-carry="@hero.CarryFactor"
+                         data-mid=@hero.MidlaneFactor data-offlane=@hero.OfflaneFactor data-support=@hero.SupportFactor>
+                }
             }
-        }
-    </div>
-    <div id="int-heroes" class="hero-category-div">
-        <h4 id="int-heroes-header" class="header-main-attribute">Intelligence<img src="../../Images/Attributes/Intelligence.png" class="header-main-attribute-img" /></h4>
-        @{
-            foreach (var hero in Model.Where(x => x.Attribute == Hero.MainAttribute.Intelligence))
-            {
-                var imgsrc = "../Images/Heroes/" + @hero.Name + ".png";
-                <img src="@imgsrc" class="hero-img" title="@hero.Name"
-                     data-main-attribute=@hero.Attribute data-attack-type=@hero.Attack data-carry="@hero.CarryFactor"
-                     data-mid=@hero.MidlaneFactor data-offlane=@hero.OfflaneFactor data-support=@hero.SupportFactor>
+        </div>
+        <div id="int-heroes" class="hero-category-div">
+            <h4 id="int-heroes-header" class="header-main-attribute">Intelligence<img src="../../Images/Attributes/Intelligence.png" class="header-main-attribute-img" /></h4>
+            @{
+                foreach (var hero in Model.Where(x => x.Attribute == Hero.MainAttribute.Intelligence))
+                {
+                    var imgsrc = "../Images/Heroes/" + @hero.Name + ".png";
+                    <img src="@imgsrc" class="hero-img" title="@hero.Name"
+                         data-main-attribute=@hero.Attribute data-attack-type=@hero.Attack data-carry="@hero.CarryFactor"
+                         data-mid=@hero.MidlaneFactor data-offlane=@hero.OfflaneFactor data-support=@hero.SupportFactor>
+                }
             }
-        }
+        </div>
     </div>
-</div>

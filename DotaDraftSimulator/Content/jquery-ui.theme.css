@@ -32,21 +32,21 @@
 	border: 1px solid #d8dcdf;
 }
 .ui-widget-content {
-	border: 1px solid #eeeeee;
-	background: #ffffff;
-	color: #333333;
+	border: 1px solid #999999;
+	background: #cccccc;
+	color: #cccccc;
 }
 .ui-widget-content a {
-	color: #333333;
+	color: #cccccc;
 }
 .ui-widget-header {
 	border: 1px solid #e3a1a1;
 	background: #cc0000 url("images/ui-bg_highlight-soft_15_cc0000_1x100.png") 50% 50% repeat-x;
-	color: #ffffff;
+	color: #cccccc;
 	font-weight: bold;
 }
 .ui-widget-header a {
-	color: #ffffff;
+	color: #cccccc;
 }
 
 /* Interaction states
@@ -61,7 +61,7 @@ works properly when clicked or hovered */
 html .ui-button.ui-state-disabled:hover,
 html .ui-button.ui-state-disabled:active {
 	border: 1px solid #d8dcdf;
-	background: #eeeeee url("images/ui-bg_highlight-hard_100_eeeeee_1x100.png") 50% 50% repeat-x;
+	background: #999999 url("images/ui-bg_highlight-hard_100_eeeeee_1x100.png") 50% 50% repeat-x;
 	font-weight: bold;
 	color: #004276;
 }
@@ -84,7 +84,7 @@ a:visited.ui-button,
 .ui-button:hover,
 .ui-button:focus {
 	border: 1px solid #cdd5da;
-	background: #f6f6f6 url("images/ui-bg_highlight-hard_100_f6f6f6_1x100.png") 50% 50% repeat-x;
+	background: #999999 url("images/ui-bg_highlight-hard_100_f6f6f6_1x100.png") 50% 50% repeat-x;
 	font-weight: bold;
 	color: #111111;
 }
@@ -111,14 +111,14 @@ a.ui-button:focus {
 a.ui-button:active,
 .ui-button:active,
 .ui-button.ui-state-active:hover {
-	border: 1px solid #eeeeee;
-	background: #ffffff;
+	border: 1px solid #999999;
+	background: #cccccc;
 	font-weight: bold;
 	color: #cc0000;
 }
 .ui-icon-background,
 .ui-state-active .ui-icon-background {
-	border: #eeeeee;
+	border: #999999;
 	background-color: #cc0000;
 }
 .ui-state-active a,
@@ -438,6 +438,6 @@ a.ui-button:active,
 	filter: Alpha(Opacity=40); /* support: IE8 */
 }
 .ui-widget-shadow {
-	-webkit-box-shadow: -8px -8px 8px #333333;
-	box-shadow: -8px -8px 8px #333333;
+	-webkit-box-shadow: -8px -8px 8px #cccccc;
+	box-shadow: -8px -8px 8px #cccccc;
 }

@@ -1,4 +1,5 @@
-﻿$(document).ready(function() {
+﻿$(document).ready(function () {
+    var selectedHero = $("#selectedHero");
     var selectedHeroName = $('#selectedHeroName');
     var selectedHeroImg = $('#selectedHeroImg');
     var mainAttributeImg = $('#main-attribute-img');
@@ -12,12 +13,14 @@
 
 
     heroImages.hover(function() {
-        $(this).toggleClass('hero-hover');
+        $(this).addClass('hero-hover');
+    }, function () {
+        $(this).removeClass('hero-hover');
     });
 
     heroImages.click(function() {
         var img = $(this);
-        $("#selectedHero").removeAttr('hidden');
+        selectedHero.css('visibility', 'visible');
         var src = img.attr('src');
         var name = img.attr('title');
         selectedHeroName.text(name);
