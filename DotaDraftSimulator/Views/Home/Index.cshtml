@@ -6,18 +6,25 @@
     <script type="text/javascript" src="~/Scripts/hero.js"></script>
 }
 
-<div id="selectedHero" hidden>
-    <p id="selectedHeroName"></p>
-    <img id="selectedHeroImg"/>
-    <div id="stats-div">
-        <div><span>Main attribute:</span><img id="main-attribute-img" /></div>
-        <div><span>Attack type:</span><img id="attack-type-img" /></div>
-        <div><span>Carry:</span><img id="carry-img" class="star-img" /></div>
-        <div><span>Mid:</span><img id="mid-img" class="star-img" /></div>
-        <div><span>Offlane:</span><img id="offlane-img" class="star-img" /></div>
-        <div><span>Support:</span><img id="support-img" class="star-img" /></div>
+<div id="tools-column">
+    <div id="selectedHero" hidden>
+        <p id="selectedHeroName"></p>
+        <img id="selectedHeroImg"/>
+        <div id="stats-div">
+            <div><span>Main attribute:</span><img id="main-attribute-img" /></div>
+            <div><span>Attack type:</span><img id="attack-type-img" /></div>
+            <div><span>Carry:</span><img id="carry-img" class="star-img" /></div>
+            <div><span>Mid:</span><img id="mid-img" class="star-img" /></div>
+            <div><span>Offlane:</span><img id="offlane-img" class="star-img" /></div>
+            <div><span>Support:</span><img id="support-img" class="star-img" /></div>
+        </div>
+    </div>
+    <div id="filters">
+        <label>Melee <input type="checkbox" id="melee-checkbox" /></label>
+        <label>Ranged <input type="checkbox" value="ranged-checkbox" /></label>
     </div>
 </div>
+
 
 
 <div id="all-heroes-div">
@@ -58,7 +65,4 @@
             }
         }
     </div>
-
-
-
 </div>

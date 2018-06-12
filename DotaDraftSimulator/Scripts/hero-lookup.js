@@ -1,4 +1,5 @@
-﻿$(document).ready(function() {
+﻿$(document).ready(function () {
+    var selectedHero = $("#selectedHero");
     var selectedHeroName = $('#selectedHeroName');
     var selectedHeroImg = $('#selectedHeroImg');
     var mainAttributeImg = $('#main-attribute-img');
@@ -7,17 +8,16 @@
     var midImg = $('#mid-img');
     var offlaneImg = $('#offlane-img');
     var supportImg = $('#support-img');
-    var heroImages = $('#all-heroes-div .hero-img');
+    var heroImages = $('#all-heroes-div.hero-img');
 
-
-
-    heroImages.hover(function() {
+    heroImages.hover(function () {
+        alert('hover');
         $(this).toggleClass('hero-hover');
     });
-
+  
     heroImages.click(function() {
         var img = $(this);
-        $("#selectedHero").removeAttr('hidden');
+        selectedHero.removeAttr('hidden');
         var src = img.attr('src');
         var name = img.attr('title');
         selectedHeroName.text(name);

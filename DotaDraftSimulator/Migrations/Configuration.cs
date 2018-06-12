@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Antlr.Runtime;
 using DotaDraftSimulator.Models;
 
 namespace DotaDraftSimulator.Migrations
@@ -56,9 +57,45 @@ namespace DotaDraftSimulator.Migrations
                 new Hero("Underlord",Hero.MainAttribute.Strength,Hero.AttackType.Melee,1,1,5,1),
                 new Hero("Undying",Hero.MainAttribute.Strength,Hero.AttackType.Melee,1,1,3,5),
                 new Hero("Wraith King",Hero.MainAttribute.Strength,Hero.AttackType.Melee,5,1,1,2), 
+
+                new Hero("Anti-Mage",Hero.MainAttribute.Agility,Hero.AttackType.Melee,5,1,1,1),
+                new Hero("Arc Warden", Hero.MainAttribute.Agility,Hero.AttackType.Ranged,5,5,1,1),
                 new Hero("Bloodseeker",Hero.MainAttribute.Agility,Hero.AttackType.Melee,4,4,4,1),
+                new Hero("Bounty Hunter",Hero.MainAttribute.Agility, Hero.AttackType.Melee,1,1,3,5),
+                new Hero("Broodmother",Hero.MainAttribute.Agility,Hero.AttackType.Melee,3,4,5,1),
+                new Hero("Clinkz",Hero.MainAttribute.Agility,Hero.AttackType.Ranged,5,4,2,1),
                 new Hero("Drow Ranger",Hero.MainAttribute.Agility,Hero.AttackType.Ranged,5,3,1,1),
+                new Hero("Ember Spirit",Hero.MainAttribute.Agility,Hero.AttackType.Melee,4,5,2,1),
+                new Hero("Faceless Void",Hero.MainAttribute.Agility,Hero.AttackType.Melee,5,1,5,1),
+                new Hero("Gyrocopter",Hero.MainAttribute.Agility,Hero.AttackType.Ranged,5,4,2,1),
+                new Hero("Juggernaut",Hero.MainAttribute.Agility,Hero.AttackType.Melee,5,4,1,1),
+                new Hero("Lone Druid",Hero.MainAttribute.Agility,Hero.AttackType.Ranged,4,4,4,1),
+                new Hero("Luna",Hero.MainAttribute.Agility,Hero.AttackType.Ranged,5,1,1,1),
+                new Hero("Medusa",Hero.MainAttribute.Agility,Hero.AttackType.Ranged,5,5,1,1),
+                new Hero("Meepo",Hero.MainAttribute.Agility,Hero.AttackType.Melee,5,5,1,1),
+                new Hero("Mirana",Hero.MainAttribute.Agility,Hero.AttackType.Ranged,4,5,4,3),
+                new Hero("Monkey King",Hero.MainAttribute.Agility,Hero.AttackType.Melee,5,4,3,3),
                 new Hero("Morphling",Hero.MainAttribute.Agility,Hero.AttackType.Ranged,5,4,2,1),
+                new Hero("Naga Siren",Hero.MainAttribute.Agility,Hero.AttackType.Melee,3,1,1,5),
+                new Hero("Nyx Assassin",Hero.MainAttribute.Agility,Hero.AttackType.Melee,1,2,4,5),
+                new Hero("Pangolier",Hero.MainAttribute.Agility,Hero.AttackType.Melee,2,2,5,1),
+                new Hero("Phantom Assassin",Hero.MainAttribute.Agility,Hero.AttackType.Melee,5,4,1,1),
+                new Hero("Phantom Lancer",Hero.MainAttribute.Agility,Hero.AttackType.Melee,5,4,1,1),
+                new Hero("Razor",Hero.MainAttribute.Agility,Hero.AttackType.Ranged,4,5,4,1),
+                new Hero("Riki",Hero.MainAttribute.Agility,Hero.AttackType.Melee,2,1,2,4),
+                new Hero("Shadow Fiend",Hero.MainAttribute.Agility,Hero.AttackType.Ranged,2,5,1,1),
+                new Hero("Slark",Hero.MainAttribute.Agility,Hero.AttackType.Melee,5,1,1,1),
+                new Hero("Sniper",Hero.MainAttribute.Agility,Hero.AttackType.Ranged,5,5,1,1),
+                new Hero("Spectre",Hero.MainAttribute.Agility,Hero.AttackType.Melee,5,1,1,1),
+                new Hero("Templar Assassin",Hero.MainAttribute.Agility,Hero.AttackType.Ranged,3,5,1,1),
+                new Hero("Terrorblade",Hero.MainAttribute.Agility,Hero.AttackType.Melee,5,2,1,2),
+                new Hero("Troll Warlord",Hero.MainAttribute.Agility,Hero.AttackType.Ranged,5,4,1,1),
+                new Hero("Ursa",Hero.MainAttribute.Agility,Hero.AttackType.Melee,5,3,1,1),
+                new Hero("Vengeful Spirit",Hero.MainAttribute.Agility,Hero.AttackType.Ranged,3,1,1,5),
+                new Hero("Venomancer",Hero.MainAttribute.Agility,Hero.AttackType.Ranged,4,4,4,2),
+                new Hero("Viper",Hero.MainAttribute.Agility,Hero.AttackType.Ranged,4,5,4,1),
+                new Hero("Weaver",Hero.MainAttribute.Agility,Hero.AttackType.Ranged,5,4,3,1), 
+                
                 new Hero("Crystal Maiden", Hero.MainAttribute.Intelligence,Hero.AttackType.Ranged,1,1,1,5),
                 new Hero("Dark Seer",Hero.MainAttribute.Intelligence,Hero.AttackType.Melee,1,1,5,1),
                 new Hero("Winter Wyvern",Hero.MainAttribute.Intelligence,Hero.AttackType.Ranged,2,1,2,5) 

@@ -45,8 +45,11 @@
     margin: 4px 2px;
 }
 
-#selectedHero {
+#tools-column {
     margin-left: 85%;
+}
+
+#selectedHero {
     width: 350px;
     height: 500px;
     background: #333333;
@@ -88,4 +91,9 @@
     height: 30px;
     margin: 5px 5px;
     vertical-align: middle;
+}
+
+.hero-hover {
+    border: solid #AA0000 3px;
+    border-radius: 3px;
 }
