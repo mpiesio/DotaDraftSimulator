@@ -126,11 +126,6 @@
     margin-top: 15px;
 }
 
-.filtered-out {
-    opacity: 0.2;
-    filter: alpha(opacity=20);
-}
-
 #filters h5 {
     text-align: center;
     color: #CC0000;
