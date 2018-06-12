@@ -3,6 +3,7 @@
     var heroImagesAll = $('#all-heroes-div .hero-img');
     var name = "";
     var interval;
+    var launchFilter;
     
 
     var filterFunc = function () {
@@ -71,11 +72,17 @@
                 name = name.substr(0, name.length - 1);
                 $('#typed-hero-name').text(name).fadeTo(500, 0.7);
                 clearInterval(interval);
-                interval = setInterval(function() {
+                interval = setInterval(function () {
+                    console.log("Fade");
                     $('#typed-hero-name').fadeTo(500, 0);
+                    clearInterval(interval);
                 },1000);
-
-                filterFunc();
+                clearInterval(launchFilter);
+                launchFilter = setInterval(function () {
+                    console.log("Launching");
+                    filterFunc();
+                    clearInterval(launchFilter);
+                }, 400);
             }
         }
     });
@@ -86,9 +93,16 @@
         $('#typed-hero-name').text(name).fadeTo(500, 0.7);
         clearInterval(interval);
         interval = setInterval(function () {
+            console.log("Fade");
             $('#typed-hero-name').fadeTo(500, 0);
-        },1000);
-        filterFunc();
+            clearInterval(interval);
+        }, 1000);
+        clearInterval(launchFilter);
+        launchFilter = setInterval(function () {
+            console.log("Launching");
+            filterFunc();
+            clearInterval(launchFilter);
+        }, 400);
     });
 
     var filterAttack = function (event) {
