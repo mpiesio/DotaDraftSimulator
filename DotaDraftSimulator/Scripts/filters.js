@@ -2,6 +2,8 @@
     $("#filters input[type='checkbox']").checkboxradio({ icon: false });
     var heroImagesAll = $('#all-heroes-div .hero-img');
     var name = "";
+    var interval;
+    
 
     var filterFunc = function () {
         var heroImages = heroImagesAll;
@@ -67,6 +69,12 @@
         if (e.which === 8) {
             if (name.length > 0) {
                 name = name.substr(0, name.length - 1);
+                $('#typed-hero-name').text(name).fadeTo(500, 0.7);
+                clearInterval(interval);
+                interval = setInterval(function() {
+                    $('#typed-hero-name').fadeTo(500, 0);
+                },1000);
+
                 filterFunc();
             }
         }
@@ -74,6 +82,12 @@
 
     $(document).keypress(function (e) {
         name += String.fromCharCode(e.which);
+        name = name.charAt(0).toUpperCase() + name.slice(1);
+        $('#typed-hero-name').text(name).fadeTo(500, 0.7);
+        clearInterval(interval);
+        interval = setInterval(function () {
+            $('#typed-hero-name').fadeTo(500, 0);
+        },1000);
         filterFunc();
     });
 

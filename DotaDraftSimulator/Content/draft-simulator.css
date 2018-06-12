@@ -113,6 +113,7 @@
 
 #attack-type-checkbox-div label {
     width: 90px;
+    margin: 10px 0;
 }
 
 #filters {
@@ -136,4 +137,14 @@
     display: inline-block;
     width: 80px;
     margin: 10px 0;
+}
+
+#typed-hero-name {
+    opacity: 0;
+    position: fixed;
+    top: 40%;
+    left: 40%;
+    text-align: center;
+    font-size: 60pt;
+    color: #f6f6f6;
 }
