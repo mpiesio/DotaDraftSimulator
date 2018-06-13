@@ -132,7 +132,7 @@ namespace DotaDraftSimulator.Migrations
                 new Hero("Techies",Hero.MainAttribute.Intelligence,Hero.AttackType.Ranged,1,1,3,4),
                 new Hero("Tinker",Hero.MainAttribute.Intelligence,Hero.AttackType.Ranged,2,5,1,1),
                 new Hero("Visage",Hero.MainAttribute.Intelligence,Hero.AttackType.Ranged,4,4,3,2),
-                new Hero("Warlock",Hero.MainAttribute.Intelligence,Hero.AttackType.Melee,1,1,2,5),
+                new Hero("Warlock",Hero.MainAttribute.Intelligence,Hero.AttackType.Ranged,1,1,2,5),
                 new Hero("Windranger",Hero.MainAttribute.Intelligence,Hero.AttackType.Ranged,1,4,4,4),
                 new Hero("Winter Wyvern",Hero.MainAttribute.Intelligence,Hero.AttackType.Ranged,2,1,2,5),
                 new Hero("Witch Doctor",Hero.MainAttribute.Intelligence,Hero.AttackType.Ranged,1,1,1,5),

@@ -4,7 +4,6 @@
     var name = "";
     var nameTimeout;
     var launchFilterTimeout;
-    
 
     function checkboxFilter() {
         var attackOk = false;

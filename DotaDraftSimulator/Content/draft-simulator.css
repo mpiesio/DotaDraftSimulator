@@ -1,13 +1,14 @@
 ﻿body {
 }
 
-#all-heroes-div {
-    margin: 10px;
-    width: 80%;
-    height: 95%;
+#hero-column {
+    width: 78%;
     position: absolute;
-    top: 30px;
-    left: 30px;
+    top: 15px;
+    left: 20px;
+}
+#all-heroes-div {
+    margin: 3px;
 }
 
 .header-main-attribute-img {
@@ -19,7 +20,7 @@
 }
 
 .header-main-attribute {
-    margin: 10px 4px;
+    margin: 5px 4px;
     vertical-align: middle;
 }
 
@@ -35,18 +36,14 @@
     color: #00D9EC;
 }
 
-.hero-category-div {
-    width: 90%;
-}
-
 .hero-img {
-    width: 90px;
-    height: 51px;
-    margin: 4px 2px;
+    width: 71px;
+    height: 40px;
+    margin: 4px 1px;
 }
 
 #tools-column {
-    margin-left: 85%;
+    margin-left: 87%;
     width: 500px;
 }
 
@@ -60,6 +57,7 @@
     border-radius: 5px;
     padding: 10px 15px;
     visibility: hidden;
+    /* display: ; */
 }
 
 #selectedHeroImg {
@@ -147,4 +145,11 @@
     text-align: center;
     font-size: 60pt;
     color: #f6f6f6;
+}
+
+.draft-hero-div {
+    width: 71px;
+    height: 40px;
+    box-shadow: 5px 10px;
+    background: red;
 }

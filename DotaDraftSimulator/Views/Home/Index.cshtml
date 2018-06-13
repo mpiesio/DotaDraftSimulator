@@ -8,7 +8,7 @@
 }
 
 <div id="tools-column">
-    <div id="selectedHero">
+    <div id="selectedHero" class="is-collapsed">
         <p id="selectedHeroName"></p>
         <img id="selectedHeroImg" />
         <div id="stats-div">
@@ -64,45 +64,89 @@
 </div>
 
 
+<div id="hero-column">
+    <div id="all-heroes-div">
+        <h2 id="all-heroes-header">Heroes</h2>
+        <div id="str-heroes" class="hero-category-div">
+            <h4 id="str-heroes-header" class="header-main-attribute">Strength<img src="../../Images/Attributes/Strength.png" class="header-main-attribute-img" /></h4>
+            @{
+                foreach (var hero in Model.Where(x => x.Attribute == Hero.MainAttribute.Strength))
+                {
+                    var imgsrc = "../Images/Heroes/" + @hero.Name + ".png";
+                    <img src="@imgsrc" class="hero-img" title="@hero.Name"
+                         data-main-attribute=@hero.Attribute data-attack-type=@hero.Attack data-carry="@hero.CarryFactor"
+                         data-mid=@hero.MidlaneFactor data-offlane=@hero.OfflaneFactor data-support=@hero.SupportFactor>
+                }
+            }
+        </div>
+        <div id="agi-heroes" class="hero-category-div">
+            <h4 id="agi-heroes-header" class="header-main-attribute">Agility<img src="../../Images/Attributes/Agility.png" class="header-main-attribute-img" /></h4>
+            @{
+                foreach (var hero in Model.Where(x => x.Attribute == Hero.MainAttribute.Agility))
+                {
+                    var imgsrc = "../Images/Heroes/" + @hero.Name + ".png";
+                    <img src="@imgsrc" class="hero-img" title="@hero.Name"
+                         data-main-attribute=@hero.Attribute data-attack-type=@hero.Attack data-carry="@hero.CarryFactor"
+                         data-mid=@hero.MidlaneFactor data-offlane=@hero.OfflaneFactor data-support=@hero.SupportFactor>
+                }
+            }
+        </div>
+        <div id="int-heroes" class="hero-category-div">
+            <h4 id="int-heroes-header" class="header-main-attribute">Intelligence<img src="../../Images/Attributes/Intelligence.png" class="header-main-attribute-img" /></h4>
+            @{
+                foreach (var hero in Model.Where(x => x.Attribute == Hero.MainAttribute.Intelligence))
+                {
+                    var imgsrc = "../Images/Heroes/" + @hero.Name + ".png";
+                    <img src="@imgsrc" class="hero-img" title="@hero.Name"
+                         data-main-attribute=@hero.Attribute data-attack-type=@hero.Attack data-carry="@hero.CarryFactor"
+                         data-mid=@hero.MidlaneFactor data-offlane=@hero.OfflaneFactor data-support=@hero.SupportFactor>
+                }
+            }
+        </div>
+    </div>
 
-<div id="all-heroes-div">
-    <h2 id="all-heroes-header">Heroes</h2>
-    <div id="str-heroes" class="hero-category-div">
-        <h4 id="str-heroes-header" class="header-main-attribute">Strength<img src="../../Images/Attributes/Strength.png" class="header-main-attribute-img" /></h4>
-        @{
-            foreach (var hero in Model.Where(x => x.Attribute == Hero.MainAttribute.Strength))
-            {
-                var imgsrc = "../Images/Heroes/" + @hero.Name + ".png";
-                <img src="@imgsrc" class="hero-img" title="@hero.Name"
-                     data-main-attribute=@hero.Attribute data-attack-type=@hero.Attack data-carry="@hero.CarryFactor"
-                     data-mid=@hero.MidlaneFactor data-offlane=@hero.OfflaneFactor data-support=@hero.SupportFactor>
-            }
-        }
-    </div>
-    <div id="agi-heroes" class="hero-category-div">
-        <h4 id="agi-heroes-header" class="header-main-attribute">Agility<img src="../../Images/Attributes/Agility.png" class="header-main-attribute-img" /></h4>
-        @{
-            foreach (var hero in Model.Where(x => x.Attribute == Hero.MainAttribute.Agility))
-            {
-                var imgsrc = "../Images/Heroes/" + @hero.Name + ".png";
-                <img src="@imgsrc" class="hero-img" title="@hero.Name"
-                     data-main-attribute=@hero.Attribute data-attack-type=@hero.Attack data-carry="@hero.CarryFactor"
-                     data-mid=@hero.MidlaneFactor data-offlane=@hero.OfflaneFactor data-support=@hero.SupportFactor>
-            }
-        }
-    </div>
-    <div id="int-heroes" class="hero-category-div">
-        <h4 id="int-heroes-header" class="header-main-attribute">Intelligence<img src="../../Images/Attributes/Intelligence.png" class="header-main-attribute-img" /></h4>
-        @{
-            foreach (var hero in Model.Where(x => x.Attribute == Hero.MainAttribute.Intelligence))
-            {
-                var imgsrc = "../Images/Heroes/" + @hero.Name + ".png";
-                <img src="@imgsrc" class="hero-img" title="@hero.Name"
-                     data-main-attribute=@hero.Attribute data-attack-type=@hero.Attack data-carry="@hero.CarryFactor"
-                     data-mid=@hero.MidlaneFactor data-offlane=@hero.OfflaneFactor data-support=@hero.SupportFactor>
-            }
-        }
+    <div id="draft-div">
+        <div id="hero-draft">
+            <div id="radiant-draft">
+                <div id="radiant-bans">
+                    <div id="radiant-ban-1" class="ban draft-hero-div"></div>
+                    <div id="radiant-ban-2" class="ban draft-hero-div"></div>
+                    <div id="radiant-ban-3" class="ban draft-hero-div"></div>
+                    <div id="radiant-ban-4" class="ban draft-hero-div"></div>
+                    <div id="radiant-ban-5" class="ban draft-hero-div"></div>
+                    <div id="radiant-ban-6" class="ban draft-hero-div"></div>
+                </div>
+
+                <div id="radiant-picks">
+                    <div id="radiant-pick-1" class="pick draft-hero-div"></div>
+                    <div id="radiant-pick-2" class="pick draft-hero-div"></div>
+                    <div id="radiant-pick-3" class="pick draft-hero-div"></div>
+                    <div id="radiant-pick-4" class="pick draft-hero-div"></div>
+                    <div id="radiant-pick-5" class="pick draft-hero-div"></div>
+                </div>
+            </div>
+            <div id="dire-draft">
+                <div id="dire-bans">
+                    <div id="dire-ban-1" class="ban draft-hero-div"></div>
+                    <div id="dire-ban-2" class="ban draft-hero-div"></div>
+                    <div id="dire-ban-3" class="ban draft-hero-div"></div>
+                    <div id="dire-ban-4" class="ban draft-hero-div"></div>
+                    <div id="dire-ban-5" class="ban draft-hero-div"></div>
+                    <div id="dire-ban-6" class="ban draft-hero-div"></div>
+                </div>
+                <div id="dire-picks">
+                    <div id="dire-pick-1" class="pick draft-hero-div"></div>
+                    <div id="dire-pick-2" class="pick draft-hero-div"></div>
+                    <div id="dire-pick-3" class="pick draft-hero-div"></div>
+                    <div id="dire-pick-4" class="pick draft-hero-div"></div>
+                    <div id="dire-pick-5" class="pick draft-hero-div"></div>
+                </div>
+            </div>
+        </div>
+        <div id="timer-div">
+            <div id="radiant-timers"></div>
+            <div id="dire-timers"></div>
+        </div>
     </div>
 </div>
-
 <p id="typed-hero-name"></p>
