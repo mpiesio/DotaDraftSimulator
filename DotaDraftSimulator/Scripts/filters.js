@@ -68,7 +68,8 @@
         }, 1000);
     };
 
-    function setUpNameFiltering() {
+    function setUpFiltering()
+    {
         clearTimeout(launchFilterTimeout);
         launchFilterTimeout = setTimeout(function () {
             if (name.length === 0) checkboxFilter();
@@ -76,12 +77,14 @@
         }, 400);
     }
 
+
+
     $(document).keydown(function(e) {
         if (e.which === 8) {
             if (name.length > 0) {
                 name = name.substr(0, name.length - 1);
                 showName();
-                setUpNameFiltering();
+                setUpFiltering();
             }
         }
     });
@@ -90,7 +93,7 @@
         name += String.fromCharCode(e.which);
         name = name.charAt(0).toUpperCase() + name.slice(1);
         showName();
-        setUpNameFiltering();
+        setUpFiltering();
     });
 
     function attackRadioFunctionality(event) {
@@ -101,7 +104,7 @@
 
     $('#melee-checkbox').change({ other: $('#ranged-checkbox')}, attackRadioFunctionality);
     $('#ranged-checkbox').change({ other: $('#melee-checkbox')}, attackRadioFunctionality);
-    $("#filters input[type='checkbox']").change(checkboxFilter);
+    $("#filters input[type='checkbox']").change(setUpFiltering);
 
     
 });
