@@ -1,13 +1,12 @@
 ﻿$(document).ready(function () {
     $("#filters input[type='checkbox']").checkboxradio({ icon: false });
-    var heroImagesAll = $('#all-heroes-div .hero-img');
+    var heroImages = $('#all-heroes-div .hero-img');
     var name = "";
     var nameTimeout;
     var launchFilterTimeout;
     
 
-    var filterFunc = function () {
-        var heroImages = heroImagesAll;
+    function checkboxFilter() {
         var attackOk = false;
         var attackTmp = $("#attack-type-checkbox-div .ui-checkboxradio-checked").length === 0;
         var attackName = $("#attack-type-checkbox-div .ui-checkboxradio-checked").prev().attr('name');
@@ -27,18 +26,6 @@
         var supportOk = false;
         var supportBoxes = $("#support-checkbox-div .ui-checkboxradio-checked");
         var supportTmp = supportBoxes.length === 0;
-
-        if (name.length !== 0) {
-            heroImages.not("#all-heroes-div .hero-img[title^='" +
-                name.charAt(0).toUpperCase() +
-                name.slice(1).toLowerCase() +
-                "']").fadeTo(500, 0.2);
-
-            heroImages = $("#all-heroes-div .hero-img[title^='" +
-                name.charAt(0).toUpperCase() +
-                name.slice(1).toLowerCase() +
-                "']");
-        }
 
         heroImages.each(function () {
             var img = $(this);
@@ -66,21 +53,35 @@
 
     };
 
+    function nameFilter() {
+        var processedName = name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
+        heroImages.not("[title^='" + processedName + "']").fadeTo(500, 0.2);
+        heroImages.filter("[title^='" + processedName + "']").fadeTo(500, 1);
+    }
+
+    function showName()
+    {
+        $('#typed-hero-name').text(name).fadeTo(500, 0.7);
+        clearTimeout(nameTimeout);
+        nameTimeout = setTimeout(function () {
+            $('#typed-hero-name').fadeTo(500, 0);
+        }, 1000);
+    };
+
+    function setUpNameFiltering() {
+        clearTimeout(launchFilterTimeout);
+        launchFilterTimeout = setTimeout(function () {
+            if (name.length === 0) checkboxFilter();
+            else nameFilter();
+        }, 400);
+    }
+
     $(document).keydown(function(e) {
         if (e.which === 8) {
             if (name.length > 0) {
                 name = name.substr(0, name.length - 1);
-                $('#typed-hero-name').text(name).fadeTo(500, 0.7);
-                clearTimeout(nameTimeout);
-                nameTimeout = setTimeout(function () {
-                    console.log("Fade");
-                    $('#typed-hero-name').fadeTo(500, 0);
-                },1000);
-                clearTimeout(launchFilterTimeout);
-                launchFilterTimeout = setTimeout(function () {
-                    console.log("Launching");
-                    filterFunc();
-                }, 400);
+                showName();
+                setUpNameFiltering();
             }
         }
     });
@@ -88,30 +89,19 @@
     $(document).keypress(function (e) {
         name += String.fromCharCode(e.which);
         name = name.charAt(0).toUpperCase() + name.slice(1);
-        $('#typed-hero-name').text(name).fadeTo(500, 0.7);
-        clearTimeout(nameTimeout);
-        nameTimeout = setTimeout(function () {
-            console.log("Fade");
-            $('#typed-hero-name').fadeTo(500, 0);
-        }, 1000);
-        clearTimeout(launchFilterTimeout);
-        launchFilterTimeout = setTimeout(function () {
-            console.log("Launching");
-            filterFunc();
-        }, 400);
+        showName();
+        setUpNameFiltering();
     });
 
-    var filterAttack = function (event) {
+    function attackRadioFunctionality(event) {
         if ($(this).is(':checked')) {
             event.data.other.prop('checked', false).checkboxradio('refresh');
         }
     };
 
-    
-
-    $('#melee-checkbox').change({ other: $('#ranged-checkbox')}, filterAttack);
-    $('#ranged-checkbox').change({ other: $('#melee-checkbox')}, filterAttack);
-    $("#filters input[type='checkbox']").change(filterFunc);
+    $('#melee-checkbox').change({ other: $('#ranged-checkbox')}, attackRadioFunctionality);
+    $('#ranged-checkbox').change({ other: $('#melee-checkbox')}, attackRadioFunctionality);
+    $("#filters input[type='checkbox']").change(checkboxFilter);
 
     
 });
