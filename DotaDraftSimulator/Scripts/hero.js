@@ -24,7 +24,7 @@
             currentHero = img.attr('title');
             selectedHero.hide('slide',
                 { direction: 'right' },
-                500,
+                750,
                 function() {
                     var src = img.attr('src');
                     var name = img.attr('title');
@@ -36,8 +36,14 @@
                     midImg.attr('src', "../Images/Stars/Star" + img.attr('data-mid') + ".png");
                     offlaneImg.attr('src', "../Images/Stars/Star" + img.attr('data-offlane') + ".png");
                     supportImg.attr('src', "../Images/Stars/Star" + img.attr('data-support') + ".png");
-                    selectedHero.stop().css('visibility', 'visible').hide().show('slide', { direction: 'right' }, 1000);
+                    if (img.hasClass("gray")) {
+                        $("#decision-button").prop("disabled", true);
+                    } else {
+                        $("#decision-button").prop("disabled", false);
+                    }
+                    selectedHero.stop().css('visibility', 'visible').hide().show('slide', { direction: 'right' }, 750);
                 });
         }
+        
     });
 });

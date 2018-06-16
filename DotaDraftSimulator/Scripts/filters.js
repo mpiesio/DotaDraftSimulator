@@ -46,16 +46,20 @@
             if (!supportTmp) supportBoxes.each(function () {
                 if ($(this).prev().attr('id').slice(-1) === img.attr('data-support')) supportOk = true;
             });
-            if (attackOk && carryOk && midOk && offlaneOk && supportOk && img.css('opacity') !== 1) img.fadeTo(500, 1);
-            else if (img.css('opacity') !== 0.2) img.fadeTo(500, 0.2);
+            if (attackOk && carryOk && midOk && offlaneOk && supportOk && img.css('opacity') !== 1 && !img.hasClass("gray")) img.fadeTo(500, 1);
+            else if (img.css('opacity') !== 0.2 && !img.hasClass("gray")) img.fadeTo(500, 0.2);
         });
 
     };
 
     function nameFilter() {
         var processedName = name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
-        heroImages.not("[title^='" + processedName + "']").fadeTo(500, 0.2);
-        heroImages.filter("[title^='" + processedName + "']").fadeTo(500, 1);
+        heroImages.not("[title^='" + processedName + "']").each(function() {
+            if(!($(this).hasClass("gray"))) fadeTo(500, 0.2);
+        });
+        heroImages.filter("[title^='" + processedName + "']").each(function () {
+            if (!($(this).hasClass("gray"))) fadeTo(500, 1);
+        });
     }
 
     function showName()

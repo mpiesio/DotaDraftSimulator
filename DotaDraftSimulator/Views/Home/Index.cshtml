@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="~/Content/draft-simulator.css" />
     <script type="text/javascript" src="~/Scripts/hero.js"></script>
     <script type="text/javascript" src="~/Scripts/filters.js"></script>
+    <script type="text/javascript" src="~/Scripts/draft.js"></script>
 }
 
 <div id="tools-column">
@@ -19,6 +20,7 @@
             <div><span>Offlane:</span><img id="offlane-img" class="star-img" /></div>
             <div><span>Support:</span><img id="support-img" class="star-img" /></div>
         </div>
+        <button id="decision-button" class="btn btn-danger">Ban</button>
     </div>
 
     <div id="filters">
@@ -73,9 +75,11 @@
                 foreach (var hero in Model.Where(x => x.Attribute == Hero.MainAttribute.Strength))
                 {
                     var imgsrc = "../Images/Heroes/" + @hero.Name + ".png";
-                    <img src="@imgsrc" class="hero-img" title="@hero.Name"
-                         data-main-attribute=@hero.Attribute data-attack-type=@hero.Attack data-carry="@hero.CarryFactor"
-                         data-mid=@hero.MidlaneFactor data-offlane=@hero.OfflaneFactor data-support=@hero.SupportFactor>
+                    <div>
+                        <img src="@imgsrc" class="hero-img" title="@hero.Name"
+                             data-main-attribute=@hero.Attribute data-attack-type=@hero.Attack data-carry="@hero.CarryFactor"
+                             data-mid=@hero.MidlaneFactor data-offlane=@hero.OfflaneFactor data-support=@hero.SupportFactor>
+                    </div>
                 }
             }
         </div>
@@ -85,9 +89,11 @@
                 foreach (var hero in Model.Where(x => x.Attribute == Hero.MainAttribute.Agility))
                 {
                     var imgsrc = "../Images/Heroes/" + @hero.Name + ".png";
-                    <img src="@imgsrc" class="hero-img" title="@hero.Name"
-                         data-main-attribute=@hero.Attribute data-attack-type=@hero.Attack data-carry="@hero.CarryFactor"
-                         data-mid=@hero.MidlaneFactor data-offlane=@hero.OfflaneFactor data-support=@hero.SupportFactor>
+                    <div>
+                        <img src="@imgsrc" class="hero-img" title="@hero.Name"
+                             data-main-attribute=@hero.Attribute data-attack-type=@hero.Attack data-carry="@hero.CarryFactor"
+                             data-mid=@hero.MidlaneFactor data-offlane=@hero.OfflaneFactor data-support=@hero.SupportFactor>
+                    </div>
                 }
             }
         </div>
@@ -97,9 +103,11 @@
                 foreach (var hero in Model.Where(x => x.Attribute == Hero.MainAttribute.Intelligence))
                 {
                     var imgsrc = "../Images/Heroes/" + @hero.Name + ".png";
-                    <img src="@imgsrc" class="hero-img" title="@hero.Name"
-                         data-main-attribute=@hero.Attribute data-attack-type=@hero.Attack data-carry="@hero.CarryFactor"
-                         data-mid=@hero.MidlaneFactor data-offlane=@hero.OfflaneFactor data-support=@hero.SupportFactor>
+                    <div>
+                        <img src="@imgsrc" class="hero-img" title="@hero.Name"
+                             data-main-attribute=@hero.Attribute data-attack-type=@hero.Attack data-carry="@hero.CarryFactor"
+                             data-mid=@hero.MidlaneFactor data-offlane=@hero.OfflaneFactor data-support=@hero.SupportFactor>
+                    </div>
                 }
             }
         </div>
@@ -108,39 +116,40 @@
     <div id="draft-div">
         <div id="hero-draft">
             <div id="radiant-draft">
+                <p id="radiant-banner" class="fraction-banner">Radiant</p>
                 <div id="radiant-bans">
-                    <div id="radiant-ban-1" class="ban draft-hero-div"></div>
-                    <div id="radiant-ban-2" class="ban draft-hero-div"></div>
-                    <div id="radiant-ban-3" class="ban draft-hero-div"></div>
-                    <div id="radiant-ban-4" class="ban draft-hero-div"></div>
-                    <div id="radiant-ban-5" class="ban draft-hero-div"></div>
-                    <div id="radiant-ban-6" class="ban draft-hero-div"></div>
+                    <div id="radiant-ban-1" class="ban draft-hero-div"><img class="ban-img" src=""> </div>
+                    <div id="radiant-ban-2" class="ban draft-hero-div"><img class="ban-img" src=""> </div>
+                    <div id="radiant-ban-3" class="ban draft-hero-div"><img class="ban-img" src=""> </div>
+                    <div id="radiant-ban-4" class="ban draft-hero-div"><img class="ban-img" src=""> </div>
+                    <div id="radiant-ban-5" class="ban draft-hero-div"><img class="ban-img" src=""> </div>
+                    <div id="radiant-ban-6" class="ban draft-hero-div"><img class="ban-img" src=""> </div>
                 </div>
-
                 <div id="radiant-picks">
-                    <div id="radiant-pick-1" class="pick draft-hero-div"></div>
-                    <div id="radiant-pick-2" class="pick draft-hero-div"></div>
-                    <div id="radiant-pick-3" class="pick draft-hero-div"></div>
-                    <div id="radiant-pick-4" class="pick draft-hero-div"></div>
-                    <div id="radiant-pick-5" class="pick draft-hero-div"></div>
+                    <div id="radiant-pick-1" class="pick draft-hero-div"><img class="pick-img" src=""> </div>
+                    <div id="radiant-pick-2" class="pick draft-hero-div"><img class="pick-img" src=""></div>
+                    <div id="radiant-pick-3" class="pick draft-hero-div"><img class="pick-img" src=""></div>
+                    <div id="radiant-pick-4" class="pick draft-hero-div"><img class="pick-img" src=""></div>
+                    <div id="radiant-pick-5" class="pick draft-hero-div"><img class="pick-img" src=""></div>
                 </div>
             </div>
             <div id="dire-draft">
-                <div id="dire-bans">
-                    <div id="dire-ban-1" class="ban draft-hero-div"></div>
-                    <div id="dire-ban-2" class="ban draft-hero-div"></div>
-                    <div id="dire-ban-3" class="ban draft-hero-div"></div>
-                    <div id="dire-ban-4" class="ban draft-hero-div"></div>
-                    <div id="dire-ban-5" class="ban draft-hero-div"></div>
-                    <div id="dire-ban-6" class="ban draft-hero-div"></div>
-                </div>
                 <div id="dire-picks">
-                    <div id="dire-pick-1" class="pick draft-hero-div"></div>
-                    <div id="dire-pick-2" class="pick draft-hero-div"></div>
-                    <div id="dire-pick-3" class="pick draft-hero-div"></div>
-                    <div id="dire-pick-4" class="pick draft-hero-div"></div>
-                    <div id="dire-pick-5" class="pick draft-hero-div"></div>
+                    <div id="dire-pick-1" class="pick draft-hero-div"><img class="pick-img" src=""> </div>
+                    <div id="dire-pick-2" class="pick draft-hero-div"><img class="pick-img" src=""> </div>
+                    <div id="dire-pick-3" class="pick draft-hero-div"><img class="pick-img" src=""> </div>
+                    <div id="dire-pick-4" class="pick draft-hero-div"><img class="pick-img" src=""> </div>
+                    <div id="dire-pick-5" class="pick draft-hero-div"><img class="pick-img" src=""> </div>
                 </div>
+                <div id="dire-bans">
+                    <div id="dire-ban-1" class="ban draft-hero-div"><img class="ban-img" src=""></div>
+                    <div id="dire-ban-2" class="ban draft-hero-div"><img class="ban-img" src=""></div>
+                    <div id="dire-ban-3" class="ban draft-hero-div"><img class="ban-img" src=""></div>
+                    <div id="dire-ban-4" class="ban draft-hero-div"><img class="ban-img" src=""></div>
+                    <div id="dire-ban-5" class="ban draft-hero-div"><img class="ban-img" src=""></div>
+                    <div id="dire-ban-6" class="ban draft-hero-div"><img class="ban-img" src=""></div>
+                </div>
+                <p id="dire-banner" class="fraction-banner">Dire</p>
             </div>
         </div>
         <div id="timer-div">
