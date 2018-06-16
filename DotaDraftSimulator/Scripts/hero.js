@@ -24,7 +24,7 @@
             currentHero = img.attr('title');
             selectedHero.hide('slide',
                 { direction: 'right' },
-                750,
+                500,
                 function() {
                     var src = img.attr('src');
                     var name = img.attr('title');
@@ -38,10 +38,8 @@
                     supportImg.attr('src', "../Images/Stars/Star" + img.attr('data-support') + ".png");
                     if (img.hasClass("gray")) {
                         $("#decision-button").prop("disabled", true);
-                    } else {
-                        $("#decision-button").prop("disabled", false);
                     }
-                    selectedHero.stop().css('visibility', 'visible').hide().show('slide', { direction: 'right' }, 750);
+                    selectedHero.stop().css('visibility', 'visible').hide().show('slide', { direction: 'right' }, 500);
                 });
         }
         
