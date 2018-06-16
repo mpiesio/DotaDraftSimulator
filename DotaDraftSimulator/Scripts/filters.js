@@ -55,10 +55,10 @@
     function nameFilter() {
         var processedName = name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
         heroImages.not("[title^='" + processedName + "']").each(function() {
-            if(!($(this).hasClass("gray"))) fadeTo(500, 0.2);
+            if (!($(this).hasClass("gray"))) $(this).fadeTo(500, 0.2);
         });
         heroImages.filter("[title^='" + processedName + "']").each(function () {
-            if (!($(this).hasClass("gray"))) fadeTo(500, 1);
+            if (!($(this).hasClass("gray"))) $(this).fadeTo(500, 1);
         });
     }
 
