@@ -50,6 +50,11 @@
             else if (img.css('opacity') !== 0.2 && !img.hasClass("gray")) img.fadeTo(500, 0.2);
         });
 
+        heroImages.click(function() {
+            var img = $(this);
+            img.fadeTo(0, 1);
+        })
+
     };
 
     function nameFilter() {
